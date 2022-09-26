@@ -12,6 +12,8 @@ router.post("/", async function( req, res) {
         password,
         phone  } = req.body;
 
+    let passwordHash = await bcryptjs.hash(password, 8);
+
     try {
         //validar si ya alguien se registro con ese mail o no 
         const userCreated = await User.create({
@@ -19,7 +21,7 @@ router.post("/", async function( req, res) {
                 name: name,
                 lastName: lastName,
                 phone: phone,
-                password: password
+                password: passwordHash
             })
         res.json(userCreated);
         console.log("user", userCreated) 

@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
-const { MONGO_USER, MONGO_PASSWORD, MONGO_DATABASE, MONGO_HOST } = process.env
+const { MONGO_USER, MONGO_PASSWORD} = process.env
 
 const MONGO_URI = `mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@appdog.hs9a9ck.mongodb.net/test`;
 

@@ -1,23 +1,23 @@
 const { Router } = require("express");
-const Dog = require("../../models/Dog");
+const User = require("../../models/User")
 
 const router = Router();
 
 router.put("/:id", async (req, res) => {
     const {_id} = req.params
-    const {location, condition} = req.body
+    const {mail, phone} = req.body
     
     try{  
-        const dog = await Dog.findOne({
+        const user = await User.findOne({
             where: {
                 _id: _id
             }
         })
-        location && (dog.location = location)
-        condition && (dog.condition = condition)
+        mail && (user.mail = mail)
+        phone && (user.phone = phone)
 
-        const dogUpdated = await dog.save()
-        res.status(200).send(dogUpdated);
+        const userUpdated = await user.save()
+        res.status(200).send(userUpdated);
 
     }catch{
         res.status(500).send("Ecurrió un error");
