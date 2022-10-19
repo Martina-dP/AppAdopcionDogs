@@ -5,7 +5,7 @@ const router = Router();
 
 router.put("/:id", async (req, res) => {
     const {_id} = req.params
-    const {location, condition} = req.body
+    const {location, condition, description} = req.body
     
     try{  
         const dog = await Dog.findOne({
@@ -15,6 +15,7 @@ router.put("/:id", async (req, res) => {
         })
         location && (dog.location = location)
         condition && (dog.condition = condition)
+        description && (dog.description = description)
 
         const dogUpdated = await dog.save()
         res.status(200).send(dogUpdated);

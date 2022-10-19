@@ -1,5 +1,6 @@
 const { Router } = require("express");
 const Dog = require("../../models/Dog");
+const User = require("../../models/User");
 
 const router = Router();
 
@@ -12,10 +13,13 @@ router.post("/", async function( req, res) {
         age,
         size, 
         sex,
-        condition  } = req.body;
+        condition,
+        userId  } = req.body;
 
-    try {
-        const dogCreated = await Dog.create({
+        const user = await User.findById(userId);
+        console.log("user",user)
+
+        const dogCreated = new Dog({
             name: name,
             img: img,
             description: description,
@@ -23,10 +27,19 @@ router.post("/", async function( req, res) {
             age: age,
             size: size, 
             sex: sex, 
-            condition: condition
+            condition: condition,
+            userId: user._id
             })
-        res.json(dogCreated);
-        console.log("dog", dogCreated) 
+
+    try {
+     
+        const saveDog = await dogCreated.save()
+
+        user.dogsId = user.dogsId.concat(saveDog._id)
+        await user.save()
+
+        res.json(saveDog);
+        console.log("dog", saveDog) 
 
     } catch (err) {
         console.log(err)

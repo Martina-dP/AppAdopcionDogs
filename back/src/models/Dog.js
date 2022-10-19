@@ -10,6 +10,10 @@ const dogSchema = new Schema({
     size: {type: String, enum: ['Chico', 'Mediano', "Grande"], required: true},
     sex: {type: String, enum: ['Hembra', 'Macho'], required: true},
     condition: {type: Boolean, default: false},
+    userId: [{
+        type: Schema.Types.ObjectId,
+        ref: "users"
+    }]
 },
     { timestamps: true } 
 );
