@@ -1,21 +1,21 @@
 import React from "react";
-import { useState } from "react";
+// import { useState } from "react";
 
 function ActivitiesCreated(){
 
-const [input, setInput] = useState({
+// const [input, setInput] = useState({
 
-})
+// })
 
-function validate(input) {
-}
+// function validate(input) {
+// }
 
-function handleChange(e){
-}
+// function handleChange(e){
+// }
 
-function handleSubmit(e){
-    e.preventDefault()
-}
+// function handleSubmit(e){
+//     e.preventDefault()
+// }
 
 return (
     <div>
