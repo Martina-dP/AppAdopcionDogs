@@ -20,17 +20,17 @@ function Login () {
                     name = "password"
                 />
             </form>
-            <p>Olvidaste tu contraseña ? </p>
+            <label>Olvidaste tu contraseña ? </label>
             <Link to = "/forgotPassword">
-                <button> Recuperar contraseña  </button>
+                <p> Recuperar contraseña  </p>
             </Link>
-            <p>No estas registrado ? </p>
+            <label>No estas registrado ? </label>
             <Link to = "/singUp">
-                <button> Registrate aqui </button>
+                <p> Registrate aqui </p>
             </Link>
             <br/>
             <Link to = "/homePage">
-                <button> Volver al inicio </button>
+                <p> Volver al inicio </p>
             </Link>
         </div>
     )} 
