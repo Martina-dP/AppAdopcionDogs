@@ -37,6 +37,12 @@ function SingUp () {
                     placeholder="*******"
                     name = "password"
                 />
+                <label>Confirmar contraseña : </label>
+                <input
+                    type = "text"
+                    placeholder="*******"
+                    name = "password"
+                />
             </form>
             <label>Ya estas registrado ? </label>
             <Link to = "/singIn">

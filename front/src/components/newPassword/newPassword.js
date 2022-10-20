@@ -17,7 +17,7 @@ const NewPassword = () => {
             />
           </div>
           <div>
-            <label>Nueva contraseña : </label>
+            <label>Confirmar nueva contraseña : </label>
             <input
               name="password2"
               type="password"
