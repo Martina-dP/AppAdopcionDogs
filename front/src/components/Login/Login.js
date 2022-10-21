@@ -24,7 +24,7 @@ function Login () {
             <Link to = "/forgotPassword">
                 <p> Recuperar contraseña  </p>
             </Link>
-            <label>No estas registrado ? </label>
+            <label>No tenes cuenta ? </label>
             <Link to = "/singUp">
                 <p> Registrate aqui </p>
             </Link>
