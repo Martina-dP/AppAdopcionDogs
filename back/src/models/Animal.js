@@ -1,7 +1,7 @@
 const { Schema } = require('mongoose');
 const mongoose = require('mongoose');
 
-const dogSchema = new Schema({
+const animalSchema = new Schema({
     name: { type: String, required: true },
     img: {type: String, required: true},
     description: {type: String, required: true},
@@ -10,6 +10,7 @@ const dogSchema = new Schema({
     size: {type: String, enum: ['Chico', 'Mediano', "Grande"], required: true},
     sex: {type: String, enum: ['Hembra', 'Macho'], required: true},
     condition: {type: Boolean, default: false},
+    type: {type: String, enum: ['Perro/a', 'Gato/a'], required: true},
     userId: [{
         type: Schema.Types.ObjectId,
         ref: "users"
@@ -18,4 +19,4 @@ const dogSchema = new Schema({
     { timestamps: true } 
 );
 
-module.exports = mongoose.model('Dog', dogSchema);
+module.exports = mongoose.model('Animal', animalSchema);

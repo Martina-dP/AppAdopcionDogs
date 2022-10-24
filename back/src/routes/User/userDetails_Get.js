@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const Dog = require("../../models/Dog");
+const Dog = require("../../models/Animal");
 const User = require("../../models/User");
 
 const router = Router();

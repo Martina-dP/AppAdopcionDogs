@@ -1,16 +1,17 @@
 import { 
-    GET_COUNTRIES,
+    GET_USER,
 } from "../actions/index"
 
 const initialState = {
-    
+    user : [],
   };
 
 function rootReducer (state = initialState, { type, payload }) {
     switch(type) {
-        case GET_COUNTRIES :
+        case GET_USER :
             return {
-                
+                ...state,
+                user : payload,
             }
         default: return state;
     }

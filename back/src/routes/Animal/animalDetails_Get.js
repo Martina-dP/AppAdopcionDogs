@@ -1,5 +1,5 @@
 const { Router } = require("express");
-const Dog = require("../../models/Dog");
+const Animal = require("../../models/Animal");
 const User = require("../../models/User");
 
 const router = Router();
@@ -8,7 +8,7 @@ router.get("/:id", async function( req, res) {
     const { _id } = req.params;
 
     try {
-        const datos = await Dog.findOne({
+        const datos = await Animal.findOne({
           where: {
             _id: _id,
           },
@@ -23,6 +23,10 @@ router.get("/:id", async function( req, res) {
         let sexo;
         if(datos.sex === "Hembra") sexo = "Hembra"
         if(datos.sex === "Macho") sexo = "Macho"
+
+        let tipo;
+        if(datos.type === "Perro/a") tipo = "Perro/a"
+        if(datos.type === "Gato/a") tipo = "Gato/a"
         
         const detalleDatos = {
             name: datos.name,
@@ -31,13 +35,15 @@ router.get("/:id", async function( req, res) {
             location: datos.location,
             age: datos.age,
             size: tamaño,
-            sex: sexo
+            sex: sexo,
+            condition : condition,
+            type: datos.tipo
         };
     
         if (detalleDatos) {
           res.status(200).send(detalleDatos);
         } else {
-          res.status(404).send("No se encontró al perro");
+          res.status(404).send("No se encontró al animal");
         }
       } catch {
         res.status(500).send("Ecurrió un error");

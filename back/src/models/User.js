@@ -8,9 +8,9 @@ const userSchema = new Schema({
     password: { type: String, require: true, unique: true },
     phone: { type: Number, require: true },
     status: {type: Boolean, require: true, default: true},
-    dogsId: [{
+    animalId: [{
         type: Schema.Types.ObjectId,
-        ref: "Dog"
+        ref: "Animal"
     }]
 },
     { timestamps: true } 
