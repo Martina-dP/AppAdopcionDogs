@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NewDog = () => {
+const NewAnimal = () => {
 
   return (
     <div>
@@ -60,4 +60,4 @@ const NewDog = () => {
   );
 };
 
-export default NewDog;
+export default NewAnimal;

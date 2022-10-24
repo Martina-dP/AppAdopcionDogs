@@ -7,11 +7,11 @@ export const POST_USER = "POST_USER";
 export const PUT_USER = "PUT_USER";
 
 // DOG
-export const GET_DOG_TRUE = "GET_DOG_TRUE";
-export const GET_DOG_FALSE = "GET_DOG_FALSE";
-export const GET_DOG_DETAILS = "GET_DOG_DETAILS";
-export const POST_DOG = "POST_DOG";
-export const PUT_DOG = "PUT_DOG";
+export const GET_ANIMAL_TRUE = "GET_ANIMAL_TRUE";
+export const GET_ANIMAL_FALSE = "GET_ANIMAL_FALSE";
+export const GET_ANIMAL_DETAILS = "GET_ANIMAL_DETAILS";
+export const POST_ANIMAL = "POST_ANIMAL";
+export const PUT_ANIMAL = "PUT_ANIMAL";
 
 // OTRO
 export const LOGIN = "LOGIN";
@@ -58,53 +58,85 @@ export function putUser () {
     }
 }
 
-            // DOG
+            // ANIMAL
 
-export function getDogsTrue () {
+export function getAnimalTrue () {
     return async function(dispatch){
-        var json = await axios.get("/dogsAdopted")
+        var json = await axios.get("/animalsAdopted")
         return dispatch({
-            type : "GET_DOG_TRUE",
+            type : "GET_ANIMAL_TRUE",
             payload : json.data
         })
     }
 }
 
-export function getDogsFalse () {
+export function getAnimalFalse () {
     return async function(dispatch){
-        var json = await axios.get("/dogs")
+        var json = await axios.get("/animals")
         return dispatch({
-            type : "GET_DOG_FALSE",
+            type : "GET_ANIMAL_FALSE",
             payload : json.data
         })
     }
 }
 
-export function getDogDetails () {
+export function getAnimalDetails () {
     return async function(dispatch){
-        var json = await axios.get("/dog/:id")
+        var json = await axios.get("/animal/:id")
         return dispatch({
-            type : "GET_DOG_DETAILS",
+            type : "GET_ANIMAL_DETAILS",
             payload : json.data
         })
     }
 }
 
-export function postDog () {
+export function postAnimal () {
     return async function(dispatch){
-        var json = await axios.get("/postDog")
+        var json = await axios.get("/postAnimal")
         return dispatch({
-            type : "POST_DOG",
+            type : "POST_ANIMAL",
             payload : json.data
         })
     }
 }
 
-export function putDog () {
+export function putAnimal () {
     return async function(dispatch){
-        var json = await axios.get("/updatedDog/:id")
+        var json = await axios.get("/updatedAnimal/:id")
         return dispatch({
-            type : "PUT_DOG",
+            type : "PUT_ANIMAL",
+            payload : json.data
+        })
+    }
+}
+
+            // OTROS
+
+export function login () {
+    return async function(dispatch){
+        var json = await axios.get("/login")
+        return dispatch({
+            type : "LOGIN",
+            payload : json.data
+        })
+    }
+}
+
+export function forgotPassword () {
+    return async function(dispatch){
+        var json = await axios.get("/forgotPassword")
+        return dispatch({
+            type : "FORGOT_PASSWOED",
+            payload : json.data
+        })
+    }
+}
+
+export function newPassword () {
+    return async function(dispatch){
+        var json = await axios.get("/newPassword")
+        return dispatch({
+            type : "NEW_PASSWORD",
             payload : json.data
         })
     }

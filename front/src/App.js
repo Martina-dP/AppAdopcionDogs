@@ -6,7 +6,7 @@ import SingUp from "./components/singUp/singUp";
 import Login from "./components/Login/Login";
 import RecoverPassword from "./components/forgotPassword/forgotPassword";
 import NewPassword from "./components/newPassword/newPassword";
-import NewDog from './components/dog/form/form';
+import NewAnimal from './components/animal/form/form';
 import DetailsUser from './components/user/details/details';
 import PerfilUser from './components/user/View-for-other-users/perfil-User';
  
@@ -21,7 +21,7 @@ function App() {
           <Route path="/singIn" element= {<Login/>} />
           <Route path="/forgotPassword" element= {<RecoverPassword/>} />
           <Route path="/newPassword" element= {<NewPassword/>} />
-          <Route path="/newDog" element= {<NewDog/>} />
+          <Route path="/newAnimal" element= {<NewAnimal/>} />
           <Route path="/myAcount/:id" element= {<DetailsUser/>} />
           <Route path="/perfil-user/:id" element= {<PerfilUser/>} />
         </Routes>
