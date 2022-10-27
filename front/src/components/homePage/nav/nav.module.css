@@ -1,0 +1,27 @@
+.all{
+    display: flex;
+    align-items: center;
+    height: 4rem;
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    width: 60%;
+    margin-left: 40%;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.info{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.btns{
+    width: 30%;
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+}

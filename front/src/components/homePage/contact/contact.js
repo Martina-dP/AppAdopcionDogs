@@ -1,13 +1,14 @@
 import React from 'react'
+import style from "./contact.module.css"
 
 const Contact = () => {
 
     return (
-        <div id='contact'>
-            <div>
+        <div className={style.all} id='contact'>
+            <div className={style.title}>
                 <h1>Contacto</h1>
             </div>
-            <div>
+            <div className={style.info}>
                 <div>
                     <h4>Teléfono</h4>
                     <p>+54 1168525749</p>

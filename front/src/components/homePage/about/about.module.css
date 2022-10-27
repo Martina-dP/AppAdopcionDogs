@@ -1,0 +1,17 @@
+.all{
+    display: flex;
+}
+
+.img{
+    width: 28rem;
+    height: 20rem;
+    margin: 2rem;
+}
+
+.info{
+    margin: 2rem;
+}
+
+.title{
+    text-align: center;
+}

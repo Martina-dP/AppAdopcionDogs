@@ -1,0 +1,16 @@
+.all{
+    display: flex;
+    justify-content: center;
+}
+
+.img1{
+    width: 24rem;
+    height: 16rem;
+    margin: 2rem;
+}
+
+.img3{
+    width: 24rem;
+    height: 16rem;
+    margin: 2rem;
+}

@@ -1,5 +1,6 @@
 import About from "./about/about"
 import Contact from "./contact/contact"
+import Decor from "./decor/decor"
 import Nav from "./nav/nav"
 
 const Total = () => {
@@ -8,6 +9,7 @@ const Total = () => {
         <div>
             <Nav />
             <About />
+            <Decor />
             <Contact />
         </div>
     )

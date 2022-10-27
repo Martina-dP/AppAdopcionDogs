@@ -1,9 +1,9 @@
 import { 
     // USER
         GET_USER,
-    //     GET_USER_DETAILS,
-    //     POST_USER,
-    //     PUT_USER,
+        GET_USER_DETAILS,
+        POST_USER,
+        PUT_USER,
 
     // // DOG
     //     GET_ANIMAL_TRUE,
@@ -21,10 +21,10 @@ import {
 const initialState = {
     user : [],
     allUsers: [],
-    detailsUser: [],
+    detailsUser: {},
     animal: [],
     allAnimals: [],
-    detailsAnimal: [],
+    detailsAnimal: {},
   };
 
 function rootReducer (state = initialState, { type, payload }) {
@@ -33,6 +33,22 @@ function rootReducer (state = initialState, { type, payload }) {
             return {
                 ...state,
                 user : payload,
+                allUsers : payload
+            }
+        case GET_USER_DETAILS :
+            return {
+                ...state,
+                detailsUser : payload,
+            }
+        case POST_USER :
+            return {
+                ...state,
+                user : payload,
+            }
+        case PUT_USER :
+            return {
+                ...state,
+                detailsUser : payload,
             }
         default: return state;
     }
