@@ -1,1 +1,11 @@
+.all{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
 
+.form{
+    background: gray;
+    width: 16rem;
+    text-align: center;
+}
