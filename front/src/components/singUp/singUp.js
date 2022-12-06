@@ -118,7 +118,7 @@ function SingUp () {
                 </div>
             </form>
             <label>Ya estas registrado ? </label>
-            <Link to = "/singIn">
+            <Link to = "/login">
                 <button> Iniciar sesion </button>
             </Link>
             <br/>

@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Total from './components/homePage/total';
 import Home from './components/home/home';
 import SingUp from "./components/singUp/singUp";
-import Login from "./components/login/Login";
+import Login from "./components/login/login";
 import RecoverPassword from "./components/forgotPassword/forgotPassword";
 import NewPassword from "./components/newPassword/newPassword";
 import NewAnimal from './components/animal/form/form';
@@ -18,7 +18,7 @@ function App() {
           <Route path="/homePage" element= {<Total/>} />
           <Route path="/home" element= {<Home/>} />
           <Route path="/singUp" element= {<SingUp/>} />
-          <Route path="/singIn" element= {<Login/>} />
+          <Route path="/login" element= {<Login/>} />
           <Route path="/forgotPassword" element= {<RecoverPassword/>} />
           <Route path="/newPassword" element= {<NewPassword/>} />
           <Route path="/newAnimal" element= {<NewAnimal/>} />

@@ -1,6 +1,6 @@
 import { 
     // USER
-        GET_USER,
+    GET_USER,
         // GET_USER_DETAILS,
         // POST_USER,
         // PUT_USER,
@@ -13,7 +13,7 @@ import {
     //     PUT_ANIMAL,
 
     // // OTRO
-    // LOGIN,
+    LOGIN,
     //     FORGOT_PASSWOED,
     //     NEW_PASSWORD,
     } from "../actions/index"
@@ -36,7 +36,7 @@ function rootReducer (state = initialState, { type, payload }) {
                 ...state,
                 user : payload,
                 allUsers : payload
-            }
+            };
         // case GET_USER_DETAILS :
         //     return {
         //         ...state,
@@ -55,11 +55,15 @@ function rootReducer (state = initialState, { type, payload }) {
         //     // ANIMAL
 
         //     // OTROS
-        // case LOGIN :
-        //     return {
-        //         ...state,
-        //         loginUser: payload
-        //     }
+        case LOGIN :
+            const { mail, password } = payload;
+            return {
+                ...state,
+                loginUser: {
+                    mail, 
+                    password
+                },
+            };
 
         default: return state;
     }

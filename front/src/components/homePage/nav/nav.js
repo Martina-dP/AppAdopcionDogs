@@ -16,7 +16,7 @@ const Nav = () => {
             <a href="#contact">Contacto</a>
           </div>
           <div className={style.btns}>
-            <Link to = "/singIn">
+            <Link to = "/login">
               <button> Iniciar sesion </button>
             </Link>
             <Link to = "/singUp">

@@ -1,5 +1,5 @@
 import React from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../actions/index";
@@ -10,6 +10,10 @@ function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [errors, setError] = useState({});
+
+    useEffect(() =>{ 
+        dispatch(login());
+      },[dispatch])
 
     const [input, setInput] = useState({
         mail: "",
@@ -41,7 +45,7 @@ function Login() {
 
     function handleSubmit(e){
         e.preventDefault()
-        dispatch(login(input));
+        dispatch(login());
         setInput({
             mail: "",
             password: ""

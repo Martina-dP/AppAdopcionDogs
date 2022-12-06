@@ -1,6 +1,22 @@
 import axios from "axios";
-// import { GET_USER, GET_USER_DETAILS } from "../reducer/user/index"
+
+// USER
 export const GET_USER = "GET_USER";
+export const GET_USER_DETAILS = "GET_USER_DETAILS";
+export const POST_USER = "POST_USER";
+export const PUT_USER = "PUT_USER";
+
+// DOG
+export const GET_ANIMAL_TRUE = "GET_ANIMAL_TRUE";
+export const GET_ANIMAL_FALSE = "GET_ANIMAL_FALSE";
+export const GET_ANIMAL_DETAILS = "GET_ANIMAL_DETAILS";
+export const POST_ANIMAL = "POST_ANIMAL";
+export const PUT_ANIMAL = "PUT_ANIMAL";
+
+// OTRO
+export const LOGIN = "LOGIN";
+export const FORGOT_PASSWOED = "FORGOT_PASSWOED";
+export const NEW_PASSWORD = "NEW_PASSWORD";
 
 export function getUser () {
     return async function(dispatch){
@@ -25,7 +41,6 @@ export function getUserDetails (_id) {
 export function postUser () {
     return async function(dispatch){
         var json = await axios.get("http://localhost:3001/createUser")
-        console.log(json, "user")
         return dispatch({
             type : "POST_USER",
             payload : json.data
@@ -97,9 +112,9 @@ export function putAnimal (_id) {
 
             // OTROS
 
-export function login() {
+export function login (payload) {
     return async function(dispatch){
-        var json = await axios.get('http://localhost:3001/login')
+        var json = await axios.get(`http://localhost:3001/login`, payload)
         return dispatch({
             type : "LOGIN",
             payload : json.data

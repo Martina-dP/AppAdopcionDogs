@@ -1,6 +1,7 @@
 const { Router } = require("express");
 const User = require("../../models/User");
 const bcryptjs = require("bcryptjs");
+const { generToken } = require("../../utils/jwt");
 
 const router = Router();
 
@@ -26,7 +27,10 @@ router.post("/", async function( req, res) {
                 phone: phone,
                 password: passwordHash
         })
-            res.json(userCreated);
+
+        const token = await generToken( userCreated._id, userCreated.name )
+
+            res.json({userCreated, token});
             console.log("user", userCreated) 
 
     } catch (err) {

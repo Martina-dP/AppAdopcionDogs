@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {getUser,getAnimalFalse} from "../../actions/index"
+import {getUser} from "../../actions/index"
 
 const Home = () => {
 
@@ -9,14 +9,10 @@ const Home = () => {
 
   useEffect(() =>{ 
     dispatch(getUser());
-    dispatch(getAnimalFalse());
   },[dispatch])
 
   const users = useSelector(state => state.user) 
   console.log(users, "users")
-
-  const animals = useSelector ((state) => state.animal) 
-  console.log(animals, "animals")
 
   return (
     <div >
