@@ -1,0 +1,10 @@
+.all{
+    display: flex;
+    justify-content: space-between;
+    margin: 2rem;
+}
+
+.img{
+    width: 28rem;
+    height: 18rem;
+}

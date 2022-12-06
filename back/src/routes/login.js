@@ -7,44 +7,22 @@ const { SECRET } = process.env;
 const router = Router();
 
 router.post("/", async (req, res) => {
-  const { mail, password } = req.body;
 
   try {
-    const user = await User.findOne({
-      where: {
-        mail: mail,
-      },
-    });
+    const user = await User.findOne({mail: req.body.mail})
+    if(!user) return res.status(400).json({error: 'Usuario no encontrado'})
 
-    if(!User.mail) return res.send("No existe mail registrado")
+    const validPassword = await bcryptjs.compare(req.body.password, user.password)
+    if(!validPassword) return res.status(400).json({error: 'Constraseña invalida'})
 
-    let isValid;
-    if (user && user.status === "active") {
-      var userData = {
-        id: user.id,
-        mail: user.mail,
-      };
-
-      isValid = await bcryptjs.compare(password, user.password);
-
-    } else if  (isValid) {
-
-      const token = jwt.sign(userData, SECRET, { expiresIn: 120 * 120 });
-
-      return res.status(200).send({
-        validate: true,
-        id: userData.id,
-        mail: userData.mail,
-        token,
-      });
-    } else {
-      return res.status(200).json({
-        validate: false,
-      });
-    }
-  } catch {
-    res.status(500).send("Ocurrió un error");
+    res.json({
+        data: 'bienvenido'
+    })
+  } catch (error) {
+    console.log(err)
+    res.json(err);
   }
+
 });
 
 module.exports = router;

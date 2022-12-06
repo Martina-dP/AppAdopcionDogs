@@ -1,15 +1,15 @@
 .all{
     display: flex;
+    margin: 2rem;
 }
 
 .img{
     width: 28rem;
     height: 20rem;
-    margin: 2rem;
 }
 
 .info{
-    margin: 2rem;
+    margin-left: 2rem;
 }
 
 .title{

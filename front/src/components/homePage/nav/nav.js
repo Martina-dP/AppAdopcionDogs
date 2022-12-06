@@ -12,7 +12,7 @@ const Nav = () => {
         <div className={style.links}>
           <div className={style.info}>
             <a href="#about">Sobre Nosotros</a>
-            <a href="#decor">Imagenes</a>
+            <a href="#faq">FAQ</a>
             <a href="#contact">Contacto</a>
           </div>
           <div className={style.btns}>

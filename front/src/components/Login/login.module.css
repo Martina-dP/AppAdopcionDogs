@@ -1,0 +1,25 @@
+.all{
+    border: 1px solid black;
+    display: grid;
+    width: 50%;
+    height: 26rem;
+    margin-left: 25%;
+}
+
+.form{
+    display: grid;
+    width: 60%;
+    margin-left: 20%;
+    border: 1px solid black;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+}
+
+.pass{
+    display: flex;
+}
+
+.login{
+    display: flex;
+}

@@ -14,8 +14,11 @@ router.post("/", async function( req, res) {
 
     let passwordHash = await bcryptjs.hash(password, 8);
 
-    try {
+    const validateMail = await User.findOne({mail})
+    if(validateMail) return res.status(400).json({mensaje: "mail ya registrado"})
 
+    try {
+        
         const userCreated = await User.create({
                 mail: mail,
                 name: name,
