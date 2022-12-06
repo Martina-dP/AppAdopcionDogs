@@ -3,12 +3,12 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Total from './components/homePage/total';
 import Home from './components/home/home';
 import SingUp from "./components/singUp/singUp";
-import Login from "./components/login/login";
 import RecoverPassword from "./components/forgotPassword/forgotPassword";
 import NewPassword from "./components/newPassword/newPassword";
 import NewAnimal from './components/animal/form/form';
 import DetailsUser from './components/user/details/details';
 import PerfilUser from './components/user/View-for-other-users/perfil-User';
+import Login from './components/login/login';
  
 function App() {
   return (

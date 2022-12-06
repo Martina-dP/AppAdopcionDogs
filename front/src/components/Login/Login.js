@@ -45,7 +45,7 @@ function Login() {
 
     function handleSubmit(e){
         e.preventDefault()
-        dispatch(login());
+        dispatch(login(input));
         setInput({
             mail: "",
             password: ""

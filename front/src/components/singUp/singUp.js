@@ -62,7 +62,6 @@ function SingUp () {
             password: "",
             phone: "",
         })
-        navigate("/singIn")
     }
 
     return(

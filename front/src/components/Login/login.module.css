@@ -5,7 +5,7 @@
     height: 26rem;
     margin-left: 25%;
 }
-
+    
 .form{
     display: grid;
     width: 60%;
@@ -15,11 +15,11 @@
     margin-bottom: 2rem;
     margin-top: 2rem;
 }
-
+    
 .pass{
     display: flex;
 }
-
+    
 .login{
     display: flex;
 }

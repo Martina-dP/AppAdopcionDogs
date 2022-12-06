@@ -2,7 +2,7 @@ import {
     // USER
     GET_USER,
         // GET_USER_DETAILS,
-        // POST_USER,
+    POST_USER,
         // PUT_USER,
 
     // // DOG
@@ -37,16 +37,11 @@ function rootReducer (state = initialState, { type, payload }) {
                 user : payload,
                 allUsers : payload
             };
-        // case GET_USER_DETAILS :
-        //     return {
-        //         ...state,
-        //         detailsUser : payload,
-        //     }
-        // case POST_USER :
-        //     return {
-        //         ...state,
-        //         user : payload,
-        //     }
+        case POST_USER :
+            return {
+                ...state,
+                user : payload,
+            };
         // case PUT_USER :
         //     return {
         //         ...state,

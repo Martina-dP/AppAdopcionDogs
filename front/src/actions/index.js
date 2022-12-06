@@ -38,9 +38,9 @@ export function getUserDetails (_id) {
     }
 }
 
-export function postUser () {
+export function postUser (input) {
     return async function(dispatch){
-        var json = await axios.get("http://localhost:3001/createUser")
+        var json = await axios.post("http://localhost:3001/createUser", input)
         return dispatch({
             type : "POST_USER",
             payload : json.data
@@ -112,9 +112,9 @@ export function putAnimal (_id) {
 
             // OTROS
 
-export function login (payload) {
+export function login (input) {
     return async function(dispatch){
-        var json = await axios.get(`http://localhost:3001/login`, payload)
+        var json = await axios.post(`http://localhost:3001/login`, input)
         return dispatch({
             type : "LOGIN",
             payload : json.data
