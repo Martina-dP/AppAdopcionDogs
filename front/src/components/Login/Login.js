@@ -11,10 +11,6 @@ function Login() {
     const dispatch = useDispatch();
     const [errors, setError] = useState({});
 
-    useEffect(() =>{ 
-        dispatch(login());
-      },[dispatch])
-
     const [input, setInput] = useState({
         mail: "",
         password: ""
@@ -23,9 +19,15 @@ function Login() {
     function validate(input) {
         const errors = {};
         if (!input.mail) {
-            errors.mail = "El mail es requerido";
-        } if (!input.password){
-            errors.password = "La contraseña es requerida"
+            errors.mail = "Required";
+        }
+        else if (!/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(
+            input.mail
+          )) {
+          errors.mail = "Invalid email address";
+        }
+        if (!input.password) {
+            errors.password = "Required";
         }
         return errors;
     }

@@ -52,9 +52,15 @@ function SingUp () {
         }))
     }
     
+const msgError = "Hubo un error"
+
     function handleSubmit(e){
         e.preventDefault()
+        if (Object.values(errors).length > 1)
+      return msgError
+    else {
         dispatch(postUser(input))
+       
         setInput({
             name: "",
             lastName: "",
@@ -62,7 +68,9 @@ function SingUp () {
             password: "",
             phone: "",
         })
+        navigate("/login")
     }
+}
 
     return(
         <div>
@@ -92,7 +100,7 @@ function SingUp () {
                     placeholder="ejemplo@gmail.com"
                     name = "mail"
                 />
-                {errors.mail && (
+                    {errors.mail && (
                     <p> {errors.mail} </p>
                 )}
                 <label>Phone : </label>
@@ -109,7 +117,7 @@ function SingUp () {
                     placeholder="*******"
                     name = "password"
                 />
-                {errors.password && (
+                    {errors.password && (
                     <p> {errors.password} </p>
                 )}
                 <div>

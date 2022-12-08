@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const NewAnimal = () => {
+const NewCat = () => {
 
   return (
     <div>
       <div>
-        <h1>Informacion del animal a publicar</h1>
+        <h1>Informacion del gato a publicar</h1>
         <form>
           <div>
           <label>Nombre : </label>
@@ -51,8 +51,11 @@ const NewAnimal = () => {
                 </select>
           </div>
            <input type="submit" value="confirmar"></input>
-           <Link to="/perfil/:id">
+           <Link to="/prePost">
               <p>Volver atras </p>
+            </Link>
+            <Link to="/home">
+              <p>Ir inicio </p>
             </Link>
         </form>
       </div>
@@ -60,4 +63,4 @@ const NewAnimal = () => {
   );
 };
 
-export default NewAnimal;
+export default NewCat;
