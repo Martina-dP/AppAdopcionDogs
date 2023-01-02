@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { postUser } from "../../actions/index"
+import style from "./singUp.module.css"
 
 function SingUp () {
 
@@ -26,7 +27,7 @@ function SingUp () {
         if (!input.mail) {
             errors.mail = "Required";
         }
-        else if (!/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(
+        if (!/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(
             input.mail
           )) {
           errors.mail = "Invalid email address";
@@ -73,11 +74,12 @@ const msgError = "Hubo un error"
 }
 
     return(
-        <div>
-            <h4>Te estas registrando en Patitas!</h4>
-            <form onSubmit={handleSubmit}>
-                <label>Nombre : </label>
+        <div className={style.all} >
+            <h4 className={style.title} >Te estas registrando en Patitas!</h4>
+            <form className={style.form} onSubmit={handleSubmit}>
+                <label className={style.label} >Nombre : </label>
                 <input
+                    className={style.input}
                     type = "text"
                     onChange =  {e => handleChange(e) }
                     placeholder="Nombre"
@@ -86,15 +88,17 @@ const msgError = "Hubo un error"
                     {errors.name && (
                         <p> {errors.name} </p>
                     )}
-                <label>Apellido : </label>
+                <label className={style.label} >Apellido : </label>
                 <input
+                    className={style.input}
                     type = "text"
                     onChange =  {e => handleChange(e) }
                     placeholder="Apellido"
                     name = "lastName"
                 />
-                <label>Mail : </label>
+                <label className={style.label} >Mail : </label>
                 <input
+                    className={style.input}
                     type = "text"
                     onChange =  {e => handleChange(e) }
                     placeholder="ejemplo@gmail.com"
@@ -103,15 +107,17 @@ const msgError = "Hubo un error"
                     {errors.mail && (
                     <p> {errors.mail} </p>
                 )}
-                <label>Phone : </label>
+                <label className={style.label} >Phone : </label>
                 <input
+                    className={style.input}
                     type = "text"
                     onChange =  {e => handleChange(e) }
                     placeholder="+54 1173951186"
                     name = "phone"
                 />
-                <label>Contraseña : </label>
+                <label className={style.label} >Contraseña : </label>
                 <input
+                    className={style.input}
                     type = "text"
                     onChange =  {e => handleChange(e) }
                     placeholder="*******"
@@ -124,13 +130,14 @@ const msgError = "Hubo un error"
                     <button type = "submit"> Crear cuenta </button>
                 </div>
             </form>
-            <label>Ya estas registrado ? </label>
-            <Link to = "/login">
-                <button> Iniciar sesion </button>
-            </Link>
+            <label className={style.links} > Ya estas registrado ? 
+                <Link to = "/login">
+                    <p> Iniciar sesion </p>
+                </Link>
+            </label>
             <br/>
-            <Link to = "/homePage">
-                <button> Volver al inicio </button>
+            <Link to = "/">
+                <p className={style.links} > Volver al inicio </p>
             </Link>
         </div>
     )} 

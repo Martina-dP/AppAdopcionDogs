@@ -59,8 +59,9 @@ function Login() {
         <div className={style.all}>
             <h4 className={style.titel}> Inicio de sesión </h4>
             <form className={style.form} onSubmit={handleSubmit}>
-                <label>Mail : </label>
+                <label className={style.label} >Mail : </label>
                 <input
+                    className={style.input}
                     type = "text"
                     onChange =  {e => handleChange(e) }
                     placeholder="ejemplo@gmail.com"
@@ -70,8 +71,9 @@ function Login() {
                     {errors.mail && (
                         <p> {errors.mail} </p>
                     )}
-                <label>Contraseña : </label>
+                <label className={style.label} >Contraseña : </label>
                 <input
+                    className={style.input}
                     type = "text"
                     onChange =  {e => handleChange(e) }
                     placeholder="*******"
@@ -85,20 +87,20 @@ function Login() {
                     <button type = "submit"> Entrar </button>
                 </div>
             </form>
-            <label className={style.pass}> 
+            <label className={style.links}> 
                 Olvidaste tu contraseña ? 
                 <Link to = "/forgotPassword">
                     <p> Recuperar contraseña  </p>
                 </Link>
             </label>
-            <label className={style.login}>
+            <label className={style.links}>
                 No tenes cuenta ? 
                 <Link to = "/singUp">
                     <p> Registrate aqui </p>
                 </Link>
             </label>
-                <Link to = "/homePage">
-                    <p> Volver al inicio </p>
+                <Link to = "/">
+                    <p className={style.links}> Volver al inicio </p>
                 </Link>
         </div>
     )} 

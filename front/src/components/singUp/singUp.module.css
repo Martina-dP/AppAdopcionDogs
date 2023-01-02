@@ -1,17 +1,13 @@
 .all{
     width: 50%;
-    height: 35rem;
+    height: 30rem;
     margin-left: 25%;
-    margin-top: 2%;
+    margin-top: 5%;
     border: 1px solid rgb(214, 214, 214);
     box-shadow: 0 2px 6px 2px rgb(185, 184, 184) ;
     text-align: center;
     /* background-color: rgba(255, 166, 0, 0.651);
     opacity: 80%; */
-}
-
-.title{
-    margin-top: 1rem;
 }
     
 .form{
@@ -20,15 +16,10 @@
     margin-left: 16%;
     padding: 2rem 2rem 1rem 2rem;
 }
-
-.label{
-    margin-bottom: .2rem;
-    display: flex;
-    justify-content: flex-start;
-}
-
-.input{
-    margin-bottom: .8rem;
+    
+.title{
+    margin-top: 2rem;
+    cursor: default;
 }
 
 .links{
@@ -39,4 +30,14 @@
 
 a:link, a:visited, a:active {
     text-decoration:none;
+}
+
+.label{
+    margin-bottom: .2rem;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.input{
+    margin-bottom: .8rem;
 }

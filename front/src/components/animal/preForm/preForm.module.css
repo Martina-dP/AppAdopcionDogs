@@ -1,0 +1,27 @@
+.all{
+    width: 50%;
+    height: 20rem;
+    margin-left: 25%;
+    margin-top: 8%;
+    border: 1px solid rgb(214, 214, 214);
+    box-shadow: 0 2px 6px 2px rgb(185, 184, 184) ;
+    text-align: center;
+    /* background-color: rgba(255, 166, 0, 0.651);
+    opacity: 80%; */
+}
+
+.title{
+    margin-top: 1rem;
+}
+
+.links{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    margin-left: 25%;
+    margin-top: 5rem;
+}
+
+.btn{
+    margin-top: 6rem;
+}

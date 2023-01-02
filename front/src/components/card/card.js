@@ -1,11 +1,12 @@
 import React from "react";
+import style from "./card.module.css"
 
 function CardUser({name, mail}){
 
     return(
-        <div >
-            <h2 > {name} </h2>
-            <h3 > {mail} </h3>
+        <div className={style.all}>
+            <h2 > Nombre : {name} </h2>
+            <h3 > Mail : {mail} </h3>
         </div>
     )} 
 

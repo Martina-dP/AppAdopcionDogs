@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import style from "./form.module.css"
 
 const NewDog = () => {
@@ -8,58 +7,63 @@ const NewDog = () => {
   return (
     <div className={style.all}>
       <h1 className={style.title}>Informacion del perro a publicar</h1>
-      <div className={style.almostAll}>
-        <form className={style.form}>
-          <div className={style.info}>
-            <label>Nombre : </label>
-              <input
-                type = "text"
-                placeholder="Nombre"
-                name = "name"
-              />
-            <label>Imagen : </label>
-
-            <label>Descripcion : </label>
-              <input
-                type = "text"
-                placeholder="Describe a la mascotas aqui"
-                name = "description"
-              />
-            <label>Ubicacion : </label>
-              <input
-                type = "text"
-                placeholder="Capital Federal, Buenos Aires"
-                name = "location"
-              />
-            <label>Edad : </label>
-              <input
-                type = "text"
-                placeholder="Escribe la edad de la mascota aqui"
-                name = "age"
-              />
-            <label>Tamaño : </label>
-              <select>
-                <option value=""> - </option>
-                <option value="Chico"> Chico </option>
-                <option value="Mediano"> Mediano </option>
-                <option value="Grande"> Grande </option>
-              </select>
-            <label>Sexo : </label>
-              <select>
-                <option value=""> - </option>
-                <option value="Hembra"> Hembra </option>
-                <option value="Macho"> Macho </option>
-              </select>
-          </div>
-          <input type="submit" value="confirmar"></input>
-          <Link to="/prePost">
-            <p>Volver atras </p>
-          </Link>
-          <Link to="/home">
-            <p>Ir inicio </p>
-          </Link>
-        </form>
-      </div>
+      <form className={style.form}>
+        <label className={style.label} >Nombre : </label>
+          <input
+            className={style.input}
+            type = "text"
+            placeholder="Nombre"
+            name = "name"
+          />
+        <label className={style.label} >Imagen : </label>
+          <input
+            className={style.input}
+            type = "text"
+            placeholder="Seleccione imagen para subir"
+            name = "img"
+          />
+        <label className={style.label} >Descripcion : </label>
+          <input
+            className={style.input}
+            type = "text"
+            placeholder="Describe a la mascotas aqui"
+            name = "description"
+          />
+        <label className={style.label} >Ubicacion : </label>
+          <input
+            className={style.input}
+            type = "text"
+            placeholder="Capital Federal, Buenos Aires"
+            name = "location"
+          />
+        <label className={style.label} >Edad : </label>
+          <input
+            className={style.input}
+            type = "text"
+            placeholder="Escribe la edad de la mascota aqui"
+            name = "age"
+          />
+        <label className={style.label} >Tamaño : </label>
+          <select className={style.input} >
+            <option value=""> - </option>
+            <option value="Chico"> Chico </option>
+            <option value="Mediano"> Mediano </option>
+            <option value="Grande"> Grande </option>
+          </select>
+        <label className={style.label} >Sexo : </label>
+          <select className={style.input} >
+            <option value=""> - </option>
+            <option value="Hembra"> Hembra </option>
+            <option value="Macho"> Macho </option>
+          </select>
+        <input type="submit" value="confirmar"></input>
+      </form>
+      <Link to="/prePost">
+        <p className={style.links} > Volver atras </p>
+      </Link>
+      <Link to="/home">
+        <p className={style.links} > Ir inicio </p>
+      </Link>
     </div>
   );
 };

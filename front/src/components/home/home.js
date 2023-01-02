@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {getUser} from "../../actions/index"
 import { Link } from "react-router-dom";
+import CardUser from "../card/card";
+import style from "./home.module.css";
 
 const Home = () => {
 
@@ -18,15 +20,16 @@ const Home = () => {
   return (
     <div >
       <h1>Estas en el inicio</h1>
-    <ul>
+    <ul className = {style.cards}>
     { users?.length > 0 ? (
-      users.map((us) => (
-        <li key={us._id}>
-          name: {us.name}
-          <br/>
-          phone: {us.phone}
-        </li>
-      )) ) : (
+      users.map((us) => {
+        return (
+           <CardUser 
+           name = {us.name}
+           mail = {us.mail}
+           />
+        );
+      }) ) : (
         <div>
           <p>No se encontraron usuarios</p>
         </div>
