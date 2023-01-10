@@ -14,7 +14,6 @@ router.post("/", async function( req, res) {
         size, 
         sex,
         condition,
-        type,
         userId  } = req.body;
 
         const user = await User.findById(userId);
@@ -29,7 +28,6 @@ router.post("/", async function( req, res) {
             size: size, 
             sex: sex, 
             condition: condition,
-            type: type,
             userId: user._id
             })
 

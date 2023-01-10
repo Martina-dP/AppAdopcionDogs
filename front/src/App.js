@@ -11,6 +11,7 @@ import Login from './components/login/login';
 import PreFormAnimals from './components/animal/preForm/preForm';
 import NewDog from './components/animal/form/formDog';
 import NewCat from './components/animal/form/formCat';
+import DetailAnimal from './components/animal/details/detail'
  
 function App() {
   return (
@@ -24,10 +25,11 @@ function App() {
           <Route path="/forgotPassword" element= {<RecoverPassword/>} />
           <Route path="/newPassword" element= {<NewPassword/>} />
           <Route path="/myAcount/:id" element= {<DetailsUser/>} />
-          <Route path="/perfil-user/:id" element= {<PerfilUser/>} />
+          <Route path="/perfil-user/:_id" element= {<PerfilUser/>} />
           <Route path="/prePost" element= {<PreFormAnimals/>} />
           <Route path="/newDog" element= {<NewDog/>} />
           <Route path="/newCat" element= {<NewCat/>} />
+          <Route path="/animal/:_id" element= {<DetailAnimal/>} />
         </Routes>
       </div>
     </BrowserRouter>

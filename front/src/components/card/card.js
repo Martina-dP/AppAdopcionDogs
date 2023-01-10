@@ -1,13 +1,17 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import style from "./card.module.css"
 
-function CardUser({name, mail}){
+function Card ({name, age, location, _id}){
 
     return(
         <div className={style.all}>
-            <h2 > Nombre : {name} </h2>
-            <h3 > Mail : {mail} </h3>
+            <Link to={`/animal/${_id}`}>
+                <h2 > Nombre : {name} </h2>
+                <h2 > Age : {age} </h2>
+                <h2> Location : {location} </h2>
+            </Link>
         </div>
     )} 
 
-export default CardUser;
+export default Card ;

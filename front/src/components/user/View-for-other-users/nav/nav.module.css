@@ -1,0 +1,14 @@
+.all{
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    background-color: rgba(255, 166, 0, 0.76);
+}
+
+.links{
+    display: flex;
+    justify-content: space-between;
+    width: 26%;
+    margin-left: 64%;
+    font-size: 12px;
+}

@@ -1,33 +1,37 @@
 import React from "react";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import {getUser} from "../../actions/index"
+import {getAnimalFalse} from "../../actions/index"
 import { Link } from "react-router-dom";
-import CardUser from "../card/card";
+import Card from "../card/card";
 import style from "./home.module.css";
+import NavHome from "./nav/nav";
 
 const Home = () => {
 
   const dispatch = useDispatch()
 
   useEffect(() =>{ 
-    dispatch(getUser());
+    dispatch(getAnimalFalse());
   },[dispatch])
 
-  const users = useSelector(state => state.user) 
-  console.log(users, "users")
+  const animalsFalse = useSelector(state => state.animalFalse) 
+  console.log(animalsFalse, "animalsFalse")
 
   return (
     <div >
-      <h1>Estas en el inicio</h1>
+      <NavHome/>
     <ul className = {style.cards}>
-    { users?.length > 0 ? (
-      users.map((us) => {
+    { animalsFalse?.length > 0 ? (
+      animalsFalse.map((us) => {
         return (
-           <CardUser 
-           name = {us.name}
-           mail = {us.mail}
-           />
+          <Card 
+            key={us._id}
+            name = {us.name}
+            age = {us.age}
+            location = {us.location}
+            _id = {us._id}
+          />
         );
       }) ) : (
         <div>
@@ -35,10 +39,6 @@ const Home = () => {
         </div>
       )}
     </ul>
-    <br/>
-      <Link to = "/prePost">
-        <button> Postear animal  </button>
-      </Link>
     </div>
   );
 };

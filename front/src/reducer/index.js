@@ -1,14 +1,14 @@
 import { 
     // USER
     GET_USER,
-        // GET_USER_DETAILS,
+    GET_USER_DETAILS,
     POST_USER,
         // PUT_USER,
 
     // // DOG
     //     GET_ANIMAL_TRUE,
-    //     GET_ANIMAL_FALSE,
-    //     GET_ANIMAL_DETAILS,
+    GET_ANIMAL_FALSE,
+    GET_ANIMAL_DETAILS,
     //     POST_ANIMAL,
     //     PUT_ANIMAL,
 
@@ -22,7 +22,8 @@ const initialState = {
     user : {},
     allUsers: {},
     detailsUser: {},
-    animal: {},
+    animalFalse: {},
+    animalTrue: {},
     allAnimals: [],
     detailsAnimal: {},
     loginUser: {}
@@ -42,13 +43,23 @@ function rootReducer (state = initialState, { type, payload }) {
                 ...state,
                 user : payload,
             };
-        // case PUT_USER :
-        //     return {
-        //         ...state,
-        //         detailsUser : payload,
-        //     }
+        case GET_USER_DETAILS :
+            return {
+                ...state,
+                detailsUser : payload,
+            };
         //     // ANIMAL
-
+        case GET_ANIMAL_FALSE :
+            return {
+                ...state,
+                animalFalse : payload,
+                allAnimals: payload
+            };
+        case GET_ANIMAL_DETAILS :
+            return {
+                ...state,
+                detailsAnimal : payload
+            };
         //     // OTROS
         case LOGIN :
             const { mail, password } = payload;

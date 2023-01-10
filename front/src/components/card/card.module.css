@@ -1,7 +1,6 @@
 .all{
-    display: flex;
-    flex-direction: column;
-    width: 10rem;
-    height: 10rem;
     border: 1px solid rgb(214, 214, 214);
+    width: 12rem;
+    height: 14rem;
+    margin: 1rem;
 }

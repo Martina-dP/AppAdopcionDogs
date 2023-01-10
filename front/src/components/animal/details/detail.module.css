@@ -1,0 +1,38 @@
+.info{
+    display: flex;
+    justify-content: center;
+    margin-top: 2rem;
+}
+
+.img{
+    width: 10rem;
+    height: 10rem;
+}
+
+.div1{
+    border: 1px solid rgb(214, 214, 214);
+    width: 12rem;
+    height: 27rem;
+    margin: 1rem;
+}
+
+.div2{
+    height: 14rem;
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid rgb(214, 214, 214);
+    font-size: 12px;
+}
+
+.div3{
+    border: 1px solid rgb(214, 214, 214);
+    margin: 1rem;
+    padding: 1rem;
+    height: 8rem;
+    font-size: 12px;
+}
+
+.div4{
+    display: inline;
+    width: 50%;
+}

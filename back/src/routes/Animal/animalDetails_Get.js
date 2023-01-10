@@ -4,7 +4,7 @@ const User = require("../../models/User");
 
 const router = Router();
 
-router.get("/:id", async function( req, res) {
+router.get("/:_id", async function( req, res) {
     const { _id } = req.params;
 
     try {
@@ -36,8 +36,8 @@ router.get("/:id", async function( req, res) {
             age: datos.age,
             size: tamaño,
             sex: sexo,
-            condition : condition,
-            type: datos.tipo
+            type: datos.tipo,
+            userId: datos.userId
         };
     
         if (detalleDatos) {
@@ -45,8 +45,9 @@ router.get("/:id", async function( req, res) {
         } else {
           res.status(404).send("No se encontró al animal");
         }
-      } catch {
+      } catch(err) {
         res.status(500).send("Ecurrió un error");
+        console.log(err)
       }
 
 });
