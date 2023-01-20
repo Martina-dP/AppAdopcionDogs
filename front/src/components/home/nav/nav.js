@@ -16,7 +16,7 @@ const NavHome = () => {
             <Link to = "/prePost">
                 <h2> Postear animal  </h2>
             </Link>
-            <Link to = {`/perfil-user/${_id}`}>
+            <Link to = {`/user/${_id}`}>
                 <h2> Perfil </h2>
             </Link>
             <Link to = "/">

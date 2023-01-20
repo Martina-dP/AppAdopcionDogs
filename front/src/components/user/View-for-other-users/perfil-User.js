@@ -14,16 +14,16 @@ const PerfilUser = () => {
     dispatch(getUserDetails(_id));
   },[dispatch])
 
-  const users = useSelector(state => state.user) 
+  const users = useSelector(state => state.detailsUser) 
   console.log(users, "users")
 
   return (
     <div >
       <NavDetail/>
-      <h1> Mi perfil </h1>
       <div>
         <div>
           <h2> {users.name} </h2>
+          <h2> {users._id} </h2>
         </div>
         <div>
 

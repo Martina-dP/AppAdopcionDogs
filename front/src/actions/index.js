@@ -28,9 +28,10 @@ export function getUser () {
     }
 }
 
-export function getUserDetails (_id) {
+export function getUserDetails(_id) {
     return async function(dispatch){
         var json = await axios.get(`http://localhost:3001/user/${_id}`)
+        console.log(json.data, "datos action")
         return dispatch({
             type : "GET_USER_DETAILS",
             payload : json.data

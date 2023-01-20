@@ -16,11 +16,13 @@ router.get("/:_id", async function( req, res) {
         });
         
         const detalleDatos = {
+            _id: datos._id,
             name: datos.name,
             lastName: datos.lastName,
             mail: datos.mail,
             phone: datos.phone,
             status: datos.status,
+            animalId: datos.animalId
         };
     
         if (detalleDatos) {
