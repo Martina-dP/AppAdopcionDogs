@@ -1,8 +1,7 @@
 .all{
     width: 50%;
     height: 35rem;
-    margin-left: 25%;
-    margin-top: 2%;
+    margin: 2rem 0 2rem 25%;
     border: 1px solid rgb(214, 214, 214);
     box-shadow: 0 2px 6px 2px rgb(185, 184, 184) ;
     text-align: center;

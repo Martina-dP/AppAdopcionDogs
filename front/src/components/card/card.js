@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Foto1 from "../../img/img4.png"
+import Foto1 from "../../img/imgDefault.jpg"
 import style from "./card.module.css"
 
 function Card ({name, age, location, _id}){

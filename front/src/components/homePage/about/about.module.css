@@ -1,6 +1,7 @@
 .all{
     display: flex;
-    margin: 2rem;
+    width: 90%;
+    margin-left: 5%;
 }
 
 .img{

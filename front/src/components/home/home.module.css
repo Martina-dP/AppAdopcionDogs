@@ -1,5 +1,9 @@
 .cards{
     display: flex;
     flex-flow: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+    width: 90%;
+    margin: 2rem 0 2rem 5%;
+    border: 1px solid rgb(214, 214, 214);
+    box-shadow: 0 2px 6px 2px rgb(185, 184, 185) ;
 }
