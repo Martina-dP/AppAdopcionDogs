@@ -114,61 +114,6 @@ function SingUp () {
               );
             }}
           </Formik>
-            {/* <h4 className={style.title} >Te estas registrando en Patitas!</h4>
-            <form className={style.form} onSubmit={handleSubmit}>
-                <label className={style.label} >Nombre : </label>
-                <input
-                    className={style.input}
-                    type = "text"
-                    onChange =  {e => handleChange(e) }
-                    placeholder="Nombre"
-                    name = "name"
-                />
-                    {errors.name && (
-                        <p> {errors.name} </p>
-                    )}
-                <label className={style.label} >Apellido : </label>
-                <input
-                    className={style.input}
-                    type = "text"
-                    onChange =  {e => handleChange(e) }
-                    placeholder="Apellido"
-                    name = "lastName"
-                />
-                <label className={style.label} >Mail : </label>
-                <input
-                    className={style.input}
-                    type = "text"
-                    onChange =  {e => handleChange(e) }
-                    placeholder="ejemplo@gmail.com"
-                    name = "mail"
-                />
-                    {errors.mail && (
-                    <p> {errors.mail} </p>
-                )}
-                <label className={style.label} >Phone : </label>
-                <input
-                    className={style.input}
-                    type = "text"
-                    onChange =  {e => handleChange(e) }
-                    placeholder="+54 1173951186"
-                    name = "phone"
-                />
-                <label className={style.label} >Contraseña : </label>
-                <input
-                    className={style.input}
-                    type = "text"
-                    onChange =  {e => handleChange(e) }
-                    placeholder="*******"
-                    name = "password"
-                />
-                    {errors.password && (
-                    <p> {errors.password} </p>
-                )}
-                <div>
-                    <button type = "submit"> Crear cuenta </button>
-                </div>
-            </form> */}
             <label className={style.links} > Ya estas registrado ? 
                 <Link to = "/login">
                     <p> Iniciar sesion </p>
