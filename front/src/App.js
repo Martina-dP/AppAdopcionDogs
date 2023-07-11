@@ -7,7 +7,7 @@ import RecoverPassword from "./components/forgotPassword/forgotPassword";
 import NewPassword from "./components/newPassword/newPassword";
 import DetailsUser from './components/user/details/details';
 import PerfilUser from './components/user/View-for-other-users/perfil-User';
-import Login from './components/login/login';
+import Login from './components/login/Login';
 import PreFormAnimals from './components/animal/preForm/preForm';
 import NewDog from './components/animal/form/formDog';
 import NewCat from './components/animal/form/formCat';

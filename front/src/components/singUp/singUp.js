@@ -3,15 +3,16 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { postUser } from "../../actions/index"
+import { Form, Formik } from "formik";
+import * as Yup from "yup";
 import style from "./singUp.module.css"
 
 function SingUp () {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [errors, setError] = useState({});
 
-    const [input, setInput] = useState({
+    const initialValues = ({
         name: "",
         lastName: "",
         mail: "",
@@ -19,63 +20,101 @@ function SingUp () {
         phone: "",
     })
 
-    function validate(input) {
-        const errors = {};
-        if (!input.name) {
-            errors.name = "Required";
-        } 
-        if (!input.mail) {
-            errors.mail = "Required";
-        }
-        if (!/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(
-            input.mail
-          )) {
-          errors.mail = "Invalid email address";
-        }
-        if (!input.password) {
-            errors.password = "Required";
-        }
-        else if (`${input.password}`.length < 7){
-          errors.password =
-            "Password must be larger than 7 characters";
-        }
-        return errors;
-    }
-    
-    function handleChange(e){
-        setInput({
-            ...input,
-            [e.target.name] : e.target.value
-        })
-        setError(validate({
-            ...input,
-            [e.target.name] : e.target.value
-        }))
-    }
-    
-const msgError = "Hubo un error"
+    const validationSchema = Yup.object().shape({
+        name: Yup.string().required("El nombre es requerido"),
+        lastName: Yup.string().required("El nombre es requerido"),
+        mail: Yup.string().email("El correo no es válido").required("El correo es obligatorio"),
+        password: Yup.string()
+        .min(8, "La contraseña debe tener al menos 8 caracteres")
+        .max(100, "La contraseña no puede tener más de 100 caracteres")
+        .required("La contraseña es obligatoria"),
+        phone: Yup.string().required("El teléfono es obligatorio"),
+      });
 
     function handleSubmit(e){
         e.preventDefault()
-        if (Object.values(errors).length > 1)
-      return msgError
-    else {
-        dispatch(postUser(input))
+        dispatch(postUser(e))
        
-        setInput({
-            name: "",
-            lastName: "",
-            mail: "",
-            password: "",
-            phone: "",
-        })
         navigate("/login")
     }
-}
 
     return(
         <div className={style.all} >
-            <h4 className={style.title} >Te estas registrando en Patitas!</h4>
+        <Formik
+            enableReinitialize
+            initialValues={initialValues}
+            validationSchema={validationSchema}
+            onSubmit={handleSubmit}
+          >
+            {(formik) => {
+              const { values, handleChange, errors, touched } = formik;
+              return (
+                <Form className={style.form} onSubmit={handleSubmit}>
+                  <div>
+                    <label className={style.label} >Nombre : </label>
+                    <input
+                        className={style.input}
+                        type = "text"
+                        placeholder="Nombre"
+                        name = "name"
+                        value={values.name}
+                        onChange={handleChange}
+                        error={Boolean(errors.name) && touched.name}
+                        errorMsg={errors.name}
+                    />
+                    <label className={style.label} >Apellido : </label>
+                <input
+                    className={style.input}
+                    type = "text"
+                    placeholder="Apellido"
+                    name = "lastName"
+                    value={values.lastName}
+                    onChange={handleChange}
+                    error={Boolean(errors.name) && touched.name}
+                    errorMsg={errors.name}
+                />
+                <label className={style.label} >Mail : </label>
+                <input
+                    className={style.input}
+                    type = "text"
+                    placeholder="ejemplo@gmail.com"
+                    name = "mail"
+                    value={values.mail}
+                    onChange={handleChange}
+                    error={Boolean(errors.name) && touched.name}
+                    errorMsg={errors.name}
+                />
+                <label className={style.label} >Phone : </label>
+                <input
+                    className={style.input}
+                    type = "text"
+                    placeholder="+54 1173951186"
+                    name = "phone"
+                    value={values.phone}
+                    onChange={handleChange}
+                    error={Boolean(errors.name) && touched.name}
+                    errorMsg={errors.name}
+                />
+                <label className={style.label} >Contraseña : </label>
+                <input
+                    className={style.input}
+                    type = "text"
+                    placeholder="*******"
+                    name = "password"
+                    value={values.password}
+                    onChange={handleChange}
+                    error={Boolean(errors.name) && touched.name}
+                    errorMsg={errors.name}
+                />
+                    <div>
+                        <button type = "submit"> Crear cuenta </button>
+                    </div>
+                    </div>
+                </Form>
+              );
+            }}
+          </Formik>
+            {/* <h4 className={style.title} >Te estas registrando en Patitas!</h4>
             <form className={style.form} onSubmit={handleSubmit}>
                 <label className={style.label} >Nombre : </label>
                 <input
@@ -129,7 +168,7 @@ const msgError = "Hubo un error"
                 <div>
                     <button type = "submit"> Crear cuenta </button>
                 </div>
-            </form>
+            </form> */}
             <label className={style.links} > Ya estas registrado ? 
                 <Link to = "/login">
                     <p> Iniciar sesion </p>
