@@ -16,7 +16,6 @@ import DetailAnimal from './components/animal/details/detail'
 function App() {
   return (
     < BrowserRouter>
-      <div>
         <Routes>
           <Route path="/" element= {<Total/>} />
           <Route path="/home" element= {<Home/>} />
@@ -31,7 +30,6 @@ function App() {
           <Route path="/newCat" element= {<NewCat/>} />
           <Route path="/animal/:_id" element= {<DetailAnimal/>} />
         </Routes>
-      </div>
     </BrowserRouter>
   );
 }

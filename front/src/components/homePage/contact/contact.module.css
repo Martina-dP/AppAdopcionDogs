@@ -2,9 +2,6 @@
     display: flex;
     background-color: rgba(255, 166, 0, 0.76);
     justify-content: space-between;
-    width: 90%;
-    margin-left: 5%;;
-    margin-top: 2rem;
 }
 
 .form{
@@ -20,4 +17,15 @@
 
 .datos{
     display: flex;
+}
+
+
+@media screen and (max-width: 600px) {
+    .all{
+        display: flex;
+        flex-flow: row wrap-reverse;
+        justify-content: center;
+        margin: auto;
+        margin-top: 2em;
+    }
 }

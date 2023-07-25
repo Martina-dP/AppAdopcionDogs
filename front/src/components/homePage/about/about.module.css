@@ -1,18 +1,29 @@
 .all{
-    display: flex;
     width: 90%;
-    margin-left: 5%;
+    display: flex;
+    align-items: center;
+    margin-top: 2em;
+    margin-bottom: 3em;
+    gap: 2em
 }
 
 .img{
-    width: 28rem;
-    height: 20rem;
-}
-
-.info{
-    margin-left: 2rem;
+    width: 34%;
 }
 
 .title{
     text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .all{
+        display: flex;
+        flex-flow: row wrap-reverse;
+        justify-content: center;
+        margin: auto;
+        margin-top: 2em;
+    }
+    .img{
+        width: 45%;
+    }
 }

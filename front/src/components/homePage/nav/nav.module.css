@@ -1,37 +1,37 @@
-.all{
-    display: flex;
-    align-items: center;
-    width: 90%;
-    height: 4rem;
-    margin-left: 5%;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+.all {
+    height: 4em;
+    margin-top: 2em;
     background-color: rgba(255, 166, 0, 0.76);
     box-shadow: 0 2px 6px 2px rgb(185, 184, 185) ;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.subAll {
+    width: 98%;
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
 }
 
 .title {
-    margin-left: 2rem;
-    font-size: 20px;
+    font-size: x-large;
 }
 
-.links{
+.links {
     display: flex;
-    width: 50%;
-    margin-left: 45%;
-    cursor: pointer;
+    gap: 1.6em;
+    margin: 0 .6em;
 }
 
-.info{
-    width: 60%;
+.btns {
     display: flex;
-    justify-content: space-between;
+    gap: 1.6em;
+    margin: 0 .6em;
 }
 
-.btns{
-    width: 40%;
-    margin-left: 10%;
-    display: flex;
-    justify-content: space-between;
-    margin-right: 2rem;
+.btnsText {
+    border: none;
+    background: none;
 }

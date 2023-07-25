@@ -1,18 +1,23 @@
 .all{
     display: flex;
     justify-content: center;
-    width: 90%;
-    margin-left: 5%;
+    gap: 6em;
+    margin-top: 8em;
+    margin-bottom: 2em;
+    background-color: rgba(128, 128, 0, 0.249);
+    padding: 1em 0;
 }
 
-.img1{
-    width: 24rem;
-    height: 16rem;
-    margin: 2rem;
+.img{
+    width: 30%;
 }
 
-.img3{
-    width: 24rem;
-    height: 16rem;
-    margin: 2rem;
+@media screen and (max-width: 600px) {
+    .all{
+        gap: 2em;
+        margin-top: 2em;
+    }
+    .img{
+        width: 40%;
+    }
 }

@@ -5,9 +5,7 @@ import foto2 from "../../../img/img2.jpg"
 const About = () => {
     return (
         <div className={style.all} id='about'>
-            <div>
             <img className={style.img} src={foto2} alt='notFound'/>
-            </div>
             <div className={style.info}>
                 <h1 className={style.title}>Sobre Nosotros</h1>
                 <p>Esta pagina fue creado con el fin de ayudar a todos aquellos animalitos 
@@ -19,7 +17,7 @@ const About = () => {
                 <p>El adoptante se compromete a abonar entre $1.500 y $5.000 po unica vez para que podamos seguir salvando la vida de estos animales.</p>
                 <p>Una vez registrado vas a poder adoptar o hacer una publicacion para conseguirle un hogar a ese animalito que lo necesita.</p>
                 <p>Crea tu cuenta y comenza a ayudarlos.</p>
-            </div>
+            </div> 
         </div>
     )
 }

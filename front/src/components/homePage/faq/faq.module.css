@@ -1,11 +1,25 @@
 .all{
     display: flex;
     justify-content: space-between;
-    width: 90%;
-    margin-left: 5%;
+    margin-top: 8em;
+    padding-bottom: 2em;
 }
 
 .img{
-    width: 28rem;
-    height: 18rem;
+    width: 30%;
+}
+
+
+@media screen and (max-width: 600px) {
+    .all{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        margin: auto;
+        margin-top: 2em;
+    }
+    .img{
+        width: 40%;
+        margin-top: 2em;
+    }
 }
