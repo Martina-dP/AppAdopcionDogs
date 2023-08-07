@@ -15,10 +15,10 @@ const RecoverPassword = () => {
             />
           <input type="submit" value="enviar"></input>
           <div >
-            <Link to="/singIn">
+            <Link to="/login">
               <p > Volver a iniciar sesion</p>
             </Link>
-            <Link to="/homePage">
+            <Link to="/">
               <p> Ir al inicio </p>
             </Link>
           </div>

@@ -1,92 +1,86 @@
-import React from "react";
-import { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../../actions/index";
+import { Form, Formik } from "formik";
+import * as Yup from "yup";
+import { BiShowAlt } from 'react-icons/bi';
+import { AiOutlineEyeInvisible } from 'react-icons/ai';
 import style from "./login.module.css"
 
 function Login() {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
-    const [errors, setError] = useState({});
-
-    const [input, setInput] = useState({
+    const [showPass, setShowPass] = useState(false)
+    
+    const initialValues = ({
         mail: "",
-        password: ""
+        password: "",
     })
-    
-    function validate(input) {
-        const errors = {};
-        if (!input.mail) {
-            errors.mail = "Required";
-        }
-        else if (!/^[-\w.%+]{1,64}@(?:[A-Z0-9-]{1,63}\.){1,125}[A-Z]{2,63}$/i.test(
-            input.mail
-          )) {
-          errors.mail = "Invalid email address";
-        }
-        if (!input.password) {
-            errors.password = "Required";
-        }
-        return errors;
-    }
-    
 
-    function handleChange(e){
-        setInput({
-            ...input,
-            [e.target.name] : e.target.value
-        })
-        setError(validate({
-            ...input,
-            [e.target.name] : e.target.value
-        }))
-    }
-    
+    const validationSchema = Yup.object().shape({
+        mail: Yup.string().email("El correo no es válido").required("El correo es obligatorio"),
+        password: Yup.string()
+        .min(8, "La contraseña debe tener al menos 8 caracteres")
+        .max(100, "La contraseña no puede tener más de 100 caracteres")
+        .required("La contraseña es obligatoria")
+        .matches(/r'\s'/, 'Contiene espacio en blanco'),
+      });
 
     function handleSubmit(e){
-        e.preventDefault()
-        dispatch(login(input));
-        setInput({
-            mail: "",
-            password: ""
-        })
-        navigate("/home")
+        console.log(e)
+        dispatch(login(e));
     }
 
     return(
+        <div className={style.contenedor}>
         <div className={style.all}>
-            <h4 className={style.titel}> Inicio de sesión </h4>
-            <form className={style.form} onSubmit={handleSubmit}>
-                <label className={style.label} >Mail : </label>
-                <input
-                    className={style.input}
-                    type = "text"
-                    onChange =  {e => handleChange(e) }
-                    placeholder="ejemplo@gmail.com"
-                    name = "mail"
-                    value={input.mail}
-                />
-                    {errors.mail && (
-                        <p> {errors.mail} </p>
-                    )}
-                <label className={style.label} >Contraseña : </label>
-                <input
-                    className={style.input}
-                    type = "text"
-                    onChange =  {e => handleChange(e) }
-                    placeholder="*******"
-                    name = "password"
-                    value={input.password}
-                />
-                    {errors.password && (
-                        <p> {errors.password} </p>
-                    )}
-                <div>
-                    <button type = "submit"> Entrar </button>
-                </div>
-            </form>
+            <h4 className={style.title}> Inicio de sesión </h4>
+            <Formik
+                enableReinitialize
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+            >
+                {(formik) => {
+                    const { values, handleChange, errors, touched, handleSubmit } = formik;
+                    return (
+                        <Form onSubmit={handleSubmit}>
+                            <div className={style.form}>
+                                <div className={style.contenedorINPUTS}>
+                                    <div className={style.inputs}>
+                                        <label> Mail : </label>
+                                        <input
+                                            type = "text"
+                                            placeholder="ejemplo@gmail.com"
+                                            name = "mail"
+                                            value={values.mail}
+                                            onChange={handleChange}
+                                        />
+                                    </div>
+                                    <div className={style.inputs}>
+                                        <label> Contraseña : </label>
+                                        <input
+                                            type = {showPass ? "text" : "password" }
+                                            placeholder="*******"
+                                            name = "password"
+                                            value={values.password}
+                                            onChange={handleChange}
+                                        />
+                                        <div onClick={() => setShowPass(!showPass)}>
+                                            {showPass ? <AiOutlineEyeInvisible /> : <BiShowAlt  /> }
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className={style.contenedorBTN}>
+                                    <button className={style.enterBTN} type = "submit"> Entrar </button>
+                                </div>
+                            </div>
+                        </Form>
+                    );
+                }}
+            </Formik>
             <label className={style.links}> 
                 Olvidaste tu contraseña ? 
                 <Link to = "/forgotPassword">
@@ -99,9 +93,10 @@ function Login() {
                     <p> Registrate aqui </p>
                 </Link>
             </label>
-                <Link to = "/">
-                    <p className={style.links}> Volver al inicio </p>
-                </Link>
+            <Link to = "/">
+                <p className={style.back}> Volver al inicio </p>
+            </Link>
+        </div>
         </div>
     )} 
 

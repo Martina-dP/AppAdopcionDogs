@@ -42,6 +42,7 @@ export function getUserDetails(_id) {
 export function postUser (input) {
     return async function(dispatch){
         var json = await axios.post("http://localhost:3001/createUser", input)
+        console.log(dispatch)
         return dispatch({
             type : "POST_USER",
             payload : json.data
