@@ -117,7 +117,6 @@ export function putAnimal (_id) {
 export function login (input) {
     return async function(dispatch){
         var json = await axios.post(`http://localhost:3001/login`, input)
-        console.log(input)
         return dispatch({
             type : "LOGIN",
             payload : json.data

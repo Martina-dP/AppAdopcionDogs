@@ -7,11 +7,11 @@ const Faq = () => {
   return (
       <div className={style.all} id='faq'>
         <div className={style.text}>
-            Preguntas 
+            <h2>Preguntas frecuentes</h2>
             <p>Puedo adoptar mas de 1 animal?</p>
               <p>Si, no hay limite pero si vemos que una persona ya va por la cuarta adopcion le hablaremos.</p>
             <p>Se puede devolver un animal?</p>
-              <p> ..... . Pero en caso de arrepentimiento preferimos que nos escriban y nos volvemos a hacer cargo antes 
+              <p> Si! Preferimos que nos escriban y nos volvemos a hacer cargo antes 
               de que lo dejen descuidado, abandonado o se lo den a cualquier persona.</p>
             <div>
               <p>Como puedo tener una idea del tamaño de un perro?</p>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { login } from "../../actions/index";
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
@@ -13,6 +13,9 @@ function Login() {
     const navigate = useNavigate();
     const dispatch = useDispatch();
     const [showPass, setShowPass] = useState(false)
+
+    const userLogin = useSelector((state) => state.user);
+    console.log("USER", userLogin)
     
     const initialValues = ({
         mail: "",
@@ -25,13 +28,18 @@ function Login() {
         .min(8, "La contraseña debe tener al menos 8 caracteres")
         .max(100, "La contraseña no puede tener más de 100 caracteres")
         .required("La contraseña es obligatoria")
-        .matches(/r'\s'/, 'Contiene espacio en blanco'),
       });
 
-    function handleSubmit(e){
-        console.log(e)
-        dispatch(login(e));
-    }
+    const handleSubmit = (values) => {
+        dispatch(login(values)).then((response) => {
+           console.log(response.payload.msg, "response")    
+           navigate("/home");      
+        })
+          .catch((error) => {
+            alert(error.response.data.msg, "error")    
+          });
+        console.log(values)
+    };
 
     return(
         <div className={style.contenedor}>
@@ -44,9 +52,9 @@ function Login() {
                 onSubmit={handleSubmit}
             >
                 {(formik) => {
-                    const { values, handleChange, errors, touched, handleSubmit } = formik;
+                    const { values, handleChange, errors, touched } = formik;
                     return (
-                        <Form onSubmit={handleSubmit}>
+                        <Form>
                             <div className={style.form}>
                                 <div className={style.contenedorINPUTS}>
                                     <div className={style.inputs}>
@@ -57,7 +65,9 @@ function Login() {
                                             name = "mail"
                                             value={values.mail}
                                             onChange={handleChange}
+                                            className={errors.mail && touched.mail ? "input-error" : ""}
                                         />
+                                        {errors.mail && touched.mail && <p className="error">{errors.mail}</p>}
                                     </div>
                                     <div className={style.inputs}>
                                         <label> Contraseña : </label>
@@ -67,14 +77,16 @@ function Login() {
                                             name = "password"
                                             value={values.password}
                                             onChange={handleChange}
+                                            className={errors.password && touched.password ? "input-error" : ""}
                                         />
+                                        {errors.password && touched.password && <p className="error">{errors.password}</p>}
                                         <div onClick={() => setShowPass(!showPass)}>
                                             {showPass ? <AiOutlineEyeInvisible /> : <BiShowAlt  /> }
                                         </div>
                                     </div>
                                 </div>
                                 <div className={style.contenedorBTN}>
-                                    <button className={style.enterBTN} type = "submit"> Entrar </button>
+                                    <button className={style.enterBTN} type="submit"> Entrar </button>
                                 </div>
                             </div>
                         </Form>

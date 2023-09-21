@@ -15,15 +15,15 @@ router.post("/", async (req, res) => {
     if ( !user ) {
       return res.status(400).json({
         ok: false,
-        msg: "Datos incorrectos"
+        msg: "Mail no registrado"
       })
-    }
+    } 
 
     const validatePassword = bcryptjs.compareSync( password, user.password )
     if ( !validatePassword ) {
       return res.status(400).json({
         ok: false,
-        msg: "Datos incorrectos"
+        msg: "Mail o contraseña incorrecto"
       })
     }
 

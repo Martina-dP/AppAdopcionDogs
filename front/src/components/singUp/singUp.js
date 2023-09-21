@@ -52,8 +52,14 @@ function SingUp () {
       });
 
     function handleSubmit(e){
-        console.log(e)
-        dispatch(postUser(e))
+        dispatch(postUser(e)).then((response) => {
+            console.log(response, "response")    
+            navigate("/login");      
+         })
+           .catch((error) => {
+             alert( "error", error)    
+           });
+         console.log(e)
     }
 
     return(
