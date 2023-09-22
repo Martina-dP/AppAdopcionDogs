@@ -15,7 +15,6 @@ const PerfilUser = () => {
   },[dispatch])
 
   const users = useSelector(state => state.detailsUser) 
-  console.log(users, "users")
 
   return (
     <div >

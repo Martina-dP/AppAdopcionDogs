@@ -12,10 +12,10 @@ const PreFormAnimals = () => {
         <h1 className={style.title} > Seleccione que animal quiere compartir </h1>
         <div className={style.links}>
           <Link to="/newDog">
-            <button > Perro </button>
+            <button className={style.button} > Perro </button>
           </Link>
           <Link to="/newCat">
-            <button > Gato </button>
+            <button className={style.button} > Gato </button>
           </Link>
         </div>
         <Link to="/home">

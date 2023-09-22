@@ -24,7 +24,6 @@ function App() {
           <Route path="/forgotPassword" element= {<RecoverPassword/>} />
           <Route path="/newPassword" element= {<NewPassword/>} />
           <Route path="/myAcount/:_id" element= {<DetailsUser/>} />
-          <Route path="/user/:_id" element= {<PerfilUser/>} />
           <Route path="/prePost" element= {<PreFormAnimals/>} />
           <Route path="/newDog" element= {<NewDog/>} />
           <Route path="/newCat" element= {<NewCat/>} />

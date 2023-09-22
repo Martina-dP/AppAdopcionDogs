@@ -1,8 +1,9 @@
 .all{
-    border: 1px solid rgba(255, 166, 0, 0.76);
+    border: 1.5px solid rgba(128, 128, 0, 0.374);
     width: 12rem;
     height: 18rem;
     margin: 1rem 0;
+    background-color: rgba(128, 128, 0, 0.249);
 }
 
 .img {

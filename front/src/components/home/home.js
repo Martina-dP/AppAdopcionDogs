@@ -4,15 +4,19 @@ import { useDispatch, useSelector } from "react-redux";
 import {getAnimalFalse} from "../../actions/index"
 import { Link } from "react-router-dom";
 import Card from "../card/card";
+import {getUserDetails} from "../../actions"
+import {useParams} from "react-router-dom";
 import style from "./home.module.css";
 import NavHome from "./nav/nav";
 
 const Home = () => {
 
   const dispatch = useDispatch()
+  const { _id } = useParams();
 
   useEffect(() =>{ 
     dispatch(getAnimalFalse());
+    dispatch(getUserDetails(_id));
   },[dispatch])
 
   const animalsFalse = useSelector(state => state.animalFalse) 

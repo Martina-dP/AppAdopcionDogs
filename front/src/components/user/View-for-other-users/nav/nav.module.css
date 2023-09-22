@@ -2,13 +2,22 @@
     display: flex;
     align-items: center;
     height: 4rem;
-    background-color: rgba(255, 166, 0, 0.76);
+    width: 90%;
+    margin-left: 5%;
+    margin-top: 1rem;
+    background-color: rgba(128, 128, 0, 0.249);
+    box-shadow: 0 2px 6px 2px rgb(185, 184, 185) ;
+}
+
+.title {
+    margin-left: 2rem;
+    font-size: 20px;
 }
 
 .links{
     display: flex;
     justify-content: space-between;
     width: 26%;
-    margin-left: 64%;
+    margin-left: 60%;
     font-size: 12px;
 }
