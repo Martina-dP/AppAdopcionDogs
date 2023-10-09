@@ -21,8 +21,6 @@ function SingUp () {
       dispatch(getUser());
     },[dispatch])
 
-
-
     const initialValues = ({
         name: "",
         lastName: "",
@@ -30,11 +28,6 @@ function SingUp () {
         password: "",
         phone: "",
     })
-
-        
-  const animalsFalse = useSelector(state => state.allUsers) 
-  
-  console.log(animalsFalse)
 
     const validationSchema = Yup.object().shape({
         name: Yup.string().required("El nombre es requerido"),
@@ -49,7 +42,7 @@ function SingUp () {
         .matches(/[0-9]/, 'Debe contener al menos un numero')
         .matches(/[A-Z]/, 'Debe contener al menos una mayuscula'),
         phone: Yup.string().required("El teléfono es obligatorio"),
-      });
+    });
 
     function handleSubmit(e){
         dispatch(postUser(e)).then((response) => {

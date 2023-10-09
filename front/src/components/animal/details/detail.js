@@ -20,6 +20,7 @@ const DetailAnimal = () => {
   console.log(detailsAnimals, "detailsAnimals")
 
   return (
+    <div  className={style.allC}>
       <div className={style.info}>
         <div className={style.div1}> 
           <img className={style.img} src={img1} alt=" img not found"/>
@@ -42,6 +43,7 @@ const DetailAnimal = () => {
           </div>
         </div>
       </div>
+    </div>
   );
 };
 export default DetailAnimal;

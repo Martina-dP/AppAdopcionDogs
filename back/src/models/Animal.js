@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 
 const animalSchema = new Schema({
     name: { type: String, required: true },
-    img: {type: String, required: true},
+    img: {type: String},
     description: {type: String, required: true},
     location: {type: String, required: true},
     age: {type: Number, required: true},
@@ -12,7 +12,7 @@ const animalSchema = new Schema({
     condition: {type: Boolean, default: false},
     userId: {
         type: Schema.Types.ObjectId,
-        ref: "users"
+        ref: "User"
     }
 },
     { timestamps: true } 

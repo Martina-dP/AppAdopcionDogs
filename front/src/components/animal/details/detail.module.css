@@ -1,7 +1,13 @@
+.allC {
+    height: 100%;
+}
+
 .info{
     display: flex;
     justify-content: center;
-    margin-top: 2rem;
+    align-items: center;
+    height: 100%;
+    background-color: rgba(128, 128, 0, 0.249);
 }
 
 .img{
@@ -11,6 +17,8 @@
 
 .div1{
     border: 1px solid rgb(214, 214, 214);
+    box-shadow: 0 2px 6px 2px rgb(185, 184, 184);
+    background-color: white;
     width: 12rem;
     height: 27rem;
     margin: 1rem;
@@ -21,11 +29,15 @@
     margin: 1rem;
     padding: 1rem;
     border: 1px solid rgb(214, 214, 214);
+    box-shadow: 0 2px 6px 2px rgb(185, 184, 184);
+    background-color: white;
     font-size: 12px;
 }
 
 .div3{
     border: 1px solid rgb(214, 214, 214);
+    box-shadow: 0 2px 6px 2px rgb(185, 184, 184);
+    background-color: white;
     margin: 1rem;
     padding: 1rem;
     height: 8rem;

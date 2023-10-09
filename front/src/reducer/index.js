@@ -9,7 +9,7 @@ import {
     //     GET_ANIMAL_TRUE,
     GET_ANIMAL_FALSE,
     GET_ANIMAL_DETAILS,
-    //     POST_ANIMAL,
+    POST_ANIMAL,
     //     PUT_ANIMAL,
 
     // // OTRO
@@ -24,7 +24,8 @@ const initialState = {
     detailsUser: {},
     animalFalse: {},
     animalTrue: {},
-    allAnimals: [],
+    animal : {},
+    allAnimals: {},
     detailsAnimal: {},
     loginUser: {}
   };
@@ -59,6 +60,11 @@ function rootReducer (state = initialState, { type, payload }) {
             return {
                 ...state,
                 detailsAnimal : payload
+            };
+        case POST_ANIMAL :
+            return {
+                ...state,
+                animal : payload,
             };
         //     // OTROS
         case LOGIN :

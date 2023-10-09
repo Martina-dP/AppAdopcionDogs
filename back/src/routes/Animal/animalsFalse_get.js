@@ -11,7 +11,7 @@ router.get("/", async function( req, res) {
       },
     });
       res.json(animals);
-      console.log("entre", animals)
+      console.log("estoy dentro")
   } catch(err) {
     res.send("Ecurrió un error");
     console.log(err, "error")

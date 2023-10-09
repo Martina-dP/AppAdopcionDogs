@@ -74,6 +74,7 @@ export function getAnimalTrue () {
 export function getAnimalFalse () {
     return async function(dispatch){
         var json = await axios.get("http://localhost:3001/animals")
+        console.log(json.data)
         return dispatch({
             type : "GET_ANIMAL_FALSE",
             payload : json.data
@@ -91,9 +92,9 @@ export function getAnimalDetails (_id) {
     }
 }
 
-export function postAnimal () {
+export function postAnimal (input) {
     return async function(dispatch){
-        var json = await axios.get("http://localhost:3001/postAnimal")
+        var json = await axios.post("http://localhost:3001/postAnimal", input)
         return dispatch({
             type : "POST_ANIMAL",
             payload : json.data

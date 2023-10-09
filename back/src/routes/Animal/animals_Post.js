@@ -17,7 +17,6 @@ router.post("/", async function( req, res) {
         userId  } = req.body;
 
         const user = await User.findById(userId);
-        console.log("user",user)
 
         const animalCreated = new Animal({
             name: name,
@@ -28,7 +27,6 @@ router.post("/", async function( req, res) {
             size: size, 
             sex: sex, 
             condition: condition,
-            userId: user._id
             })
 
     try {
@@ -39,7 +37,6 @@ router.post("/", async function( req, res) {
         await user.save()
 
         res.json(saveAnimal);
-        console.log("dog", saveAnimal) 
 
     } catch (err) {
         console.log(err)
