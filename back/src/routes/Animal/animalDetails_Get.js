@@ -39,7 +39,7 @@ router.get("/:_id", async function( req, res) {
             type: datos.tipo,
             userId: datos.userId
         };
-    
+
         if (detalleDatos) {
           res.status(200).send(detalleDatos);
         } else {

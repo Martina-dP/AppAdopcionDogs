@@ -22,7 +22,8 @@ router.get("/:_id", async function( req, res) {
             mail: datos.mail,
             phone: datos.phone,
             status: datos.status,
-            animalId: datos.animalId
+            animalId: datos.animalId,
+            donations: datos.donations
         };
     
         if (detalleDatos) {

@@ -2,11 +2,11 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Total from './components/homePage/total';
 import Home from './components/home/home';
+import DonationsPay from './components/payments/donations/DonationsPay';
 import SingUp from "./components/singUp/singUp";
 import RecoverPassword from "./components/forgotPassword/forgotPassword";
 import NewPassword from "./components/newPassword/newPassword";
 import DetailsUser from './components/user/details/details';
-import PerfilUser from './components/user/View-for-other-users/perfil-User';
 import Login from './components/login/Login';
 import PreFormAnimals from './components/animal/preForm/preForm';
 import NewDog from './components/animal/form/formDog';
@@ -19,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element= {<Total/>} />
           <Route path="/home" element= {<Home/>} />
+          <Route path="/ayuda" element= {<DonationsPay/>} />
           <Route path="/singUp" element= {<SingUp/>} />
           <Route path="/login" element= {<Login/>} />
           <Route path="/forgotPassword" element= {<RecoverPassword/>} />

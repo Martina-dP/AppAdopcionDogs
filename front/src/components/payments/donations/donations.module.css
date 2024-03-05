@@ -1,0 +1,21 @@
+.contenedor {
+    height: 100%;
+    background-color: bisque;
+}
+
+.position {
+    width: 28rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: cadetblue;
+    margin: auto;
+}
+
+.all {
+    border: 2px solid violet;
+    padding: 1em;
+    width: 100%;
+}
+

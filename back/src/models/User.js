@@ -8,6 +8,7 @@ const userSchema = new Schema({
     password: { type: String, require: true, unique: true },
     phone: { type: Number, require: true },
     status: {type: Boolean, require: true, default: true},
+    donations: [{type: Number}],
     animalId: [{
         type: Schema.Types.ObjectId,
         ref: "Animal"
